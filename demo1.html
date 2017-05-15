@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo重力感应</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <style type="text/css">
+    
+    img{
+      height: 100%;
+      width: auto
+    }
+    *{margin: 0;padding:0;}
+  </style>
+  <script type="text/javascript">
+    document.addEventListener('touchmove',function(e){
+        e.preventDefault();
+    })
+  </script>
+</head>
+<body style="overflow: hidden;">
+		<div style="height: 504px;width:400px;margin-left: -80px;">
+        <img src="./assets/images/0.jpg" id="imgLogo" alt="">   
+    </div>
+<!-- <p id="moCalcTiltLR"></p> 
+<p id="moCalcTiltFB"></p>  -->
+		<script> 
+function deviceMotionHandler(eventData) { 
+    // 
+  var acceleration = eventData.accelerationIncludingGravity; 
+  var facingUp = -1; 
+  if (acceleration.z > 0) { 
+    facingUp = +1; 
+  }      
+  var tiltLR = Math.round(((acceleration.x) / 9.81) * -90); 
+  var tiltFB = Math.round(((acceleration.y + 9.81) / 9.81) * 90 * facingUp);
+
+  //document.getElementById("moCalcTiltLR").innerHTML = tiltLR; 
+  //document.getElementById("moCalcTiltFB").innerHTML = tiltFB; 
+  var rotation = " translate3d("+tiltLR+"px,"+0+"px,0)"; 
+  document.getElementById("imgLogo").style.webkitTransform = rotation;        
+} 
+// 
+if (window.DeviceMotionEvent) { 
+window.addEventListener('devicemotion',deviceMotionHandler, false); 
+}else{ 
+    alert('亲，你的浏览器不支持DeviceMotionEvent哦~'); 
+} 
+</script>
+</body>
+</html>

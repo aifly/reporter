@@ -1,0 +1,41 @@
+@import './base.scss';
+.lt-main-nav{
+	width: 10rem;
+	@include transition_transform(.5s);
+	
+	li{
+		
+		@include pos(r);
+		width:100%;
+		&:last-of-type{
+			.lt-info{
+				display: none;
+			}
+		}
+		.lt-info{
+		  display: inline-block;
+		  width: 40px;
+		  height: 40px;
+		  opacity: 0;
+		  z-index: 9999;
+		  position: absolute;
+		  bottom: .5rem;
+		  left: 50%;
+		  border-radius: 50%;
+		  margin-left: -20px;
+		  -webkit-animation: ltshake 1.5s infinite ease;
+		  animation: ltshake 1.5s infinite ease;
+		}
+	}
+}
+
+@-webkit-keyframes ltshake {
+  from {
+    -webkit-transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(-25px);
+    opacity: 1;
+  }
+}

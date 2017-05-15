@@ -1,0 +1,58 @@
+﻿@import "../../../assets/css/base.scss";
+
+html, body, div, p, ul, li, ol, dl, dt, dd, header, footer, video, h1, h2, h3, h4, canvas, section, figure {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+html, body {
+  height: 100%;
+}
+body{
+	  font-family: "Helvetica Neue", 'Helvetica', "Microsoft YaHei", '微软雅黑', arial, sans-serif;
+	  overflow-x:hidden;
+}
+img {
+  border: none;
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+}
+
+input, textarea {
+  outline: none;
+}
+
+.lt-result-img{
+  width:84%;
+  left: 7%;
+  top:.4rem;  
+  img{
+  }
+}
+ 
+.lt-result-main-ui{
+  .zmiti-bj{
+    width: 8rem;
+    left: 1rem;
+    @include pos(a);
+    top: 3rem;
+  }
+  li.layer{
+    @include displayBox(vertical);
+    video{
+      display: block;
+      width: 90%;
+      margin:0 auto;
+      background: #333;
+    }
+  }
+}

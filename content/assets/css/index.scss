@@ -1,0 +1,71 @@
+﻿@import "../../../assets/css/base.scss";
+.lt-fupin1-main-ui{
+  img{
+    height: 100%;
+    width:auto;
+  }
+  .lt-fupin1-img-C {
+    width:12rem;
+    height: 100%;
+    @include pos(a);
+    left: -1rem;
+    top:0;
+  }
+  .layer{
+    @include pos(a);
+  }
+
+  .lt-fp-text-C{
+
+    span{
+      display: block;
+    }
+  }
+
+
+}
+
+.lt-fp-center-text{
+
+  width:8rem;
+  left: 1rem;
+  @include pos(a);
+  bottom: 2rem;
+  color:#fff;
+  font-size: .5rem;
+  img{
+    width:100%;
+    height: auto;
+  }
+  h4{
+    width:2rem;
+  }
+  .lt-fp-text-C{
+      width:100%;
+      margin: 4px 0;
+      padding:.5rem 0;
+      font-size: .6rem;
+      background: rgba(204,153,51,.55);
+      text-align: center;
+      span{margin-top: .4rem;font-size:.4rem;padding:0 20px ;box-sizing:border-box;}
+  }
+  @at-root.lt-fp-pagetion{
+    text-align: center;
+    font-size: .5rem;
+    font-family: Arial;
+    @include pos(r);
+    &:before,&:after{
+        content:'';
+        width:30%;
+        height: 1px;
+        @include fly-h-gradient-line();
+        @include pos(a);
+        left: 10px;
+        top: 8px;
+    }
+    &:after{
+      right:10px;
+      left: auto;
+    }
+  }
+}
